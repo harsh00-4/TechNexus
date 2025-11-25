@@ -1,25 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const CommentSection = ({ problemId }) => {
-    const [comments, setComments] = useState([
-        { id: 1, author: "Alex", text: "Have you tried using a heap data structure?", time: "2 hours ago" },
-        { id: 2, author: "Sarah", text: "Check out Dijkstra's algorithm for similar problems.", time: "5 hours ago" }
-    ]);
+    const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
 
-    const handleAddComment = (e) => {
+    useEffect(() => {
+        fetchComments();
+    }, [problemId]);
+
+    const fetchComments = () => {
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        fetch(`${API_URL}/api/problems/${problemId}/comments`)
+            .then(res => res.json())
+            .then(data => setComments(data))
+            .catch(err => console.error("Failed to fetch comments", err));
+    };
+
+    const handleAddComment = async (e) => {
         e.preventDefault();
         if (!newComment.trim()) return;
 
-        const comment = {
-            id: comments.length + 1,
-            author: "You",
-            text: newComment,
-            time: "Just now"
-        };
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const token = localStorage.getItem('token');
 
-        setComments([comment, ...comments]);
-        setNewComment('');
+        if (!token) {
+            alert("Please login to comment!");
+            return;
+        }
+
+        try {
+            const res = await fetch(`${API_URL}/api/problems/${problemId}/comments`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ text: newComment })
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                setComments([data.comment, ...comments]);
+                setNewComment('');
+            } else {
+                alert(data.message || "Failed to post comment");
+            }
+        } catch (err) {
+            console.error("Error posting comment:", err);
+        }
     };
 
     return (
@@ -46,15 +74,21 @@ const CommentSection = ({ problemId }) => {
 
             {/* Comments List */}
             <div className="space-y-4">
-                {comments.map((comment) => (
-                    <div key={comment.id} className="bg-gray-900/30 dark:bg-gray-900/30 light:bg-gray-100 p-4 rounded-lg border border-gray-800 dark:border-gray-800 light:border-gray-200">
-                        <div className="flex items-center gap-2 mb-2">
-                            <span className="font-bold text-white dark:text-white light:text-gray-900">{comment.author}</span>
-                            <span className="text-xs text-gray-500 dark:text-gray-500 light:text-gray-600">{comment.time}</span>
+                {comments.length === 0 ? (
+                    <p className="text-gray-500 text-sm italic">No comments yet. Be the first!</p>
+                ) : (
+                    comments.map((comment) => (
+                        <div key={comment._id} className="bg-gray-900/30 dark:bg-gray-900/30 light:bg-gray-100 p-4 rounded-lg border border-gray-800 dark:border-gray-800 light:border-gray-200">
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="font-bold text-white dark:text-white light:text-gray-900">{comment.author}</span>
+                                <span className="text-xs text-gray-500 dark:text-gray-500 light:text-gray-600">
+                                    {new Date(comment.createdAt).toLocaleDateString()}
+                                </span>
+                            </div>
+                            <p className="text-gray-300 dark:text-gray-300 light:text-gray-700">{comment.text}</p>
                         </div>
-                        <p className="text-gray-300 dark:text-gray-300 light:text-gray-700">{comment.text}</p>
-                    </div>
-                ))}
+                    ))
+                )}
             </div>
         </div>
     );

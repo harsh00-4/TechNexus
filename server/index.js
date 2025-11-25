@@ -130,8 +130,10 @@ let problems = [
     { id: 2, title: "React State Management", votes: 8, description: "Redux vs Context API in 2025?" }
 ];
 
-// Import Problem Model
+// Import Models
 const Problem = require('./models/Problem');
+const Comment = require('./models/Comment');
+const Chat = require('./models/Chat');
 
 // Routes
 app.get('/api/news', (req, res) => {
@@ -195,9 +197,69 @@ app.post('/api/vote', async (req, res) => {
     }
 });
 
-// Groq AI Chat with Fallback Models
+// --- COMMENTS ENDPOINTS ---
+
+// Get comments for a problem
+app.get('/api/problems/:id/comments', async (req, res) => {
+    try {
+        const comments = await Comment.find({ problem: req.params.id }).sort({ createdAt: -1 });
+        res.json(comments);
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error fetching comments" });
+    }
+});
+
+// Post a comment
+app.post('/api/problems/:id/comments', auth, async (req, res) => {
+    const { text } = req.body;
+    if (!text) return res.status(400).json({ success: false, message: "Comment text required" });
+
+    try {
+        const newComment = new Comment({
+            text,
+            author: req.user.name,
+            userId: req.user._id,
+            problem: req.params.id
+        });
+        await newComment.save();
+        res.json({ success: true, comment: newComment });
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error posting comment" });
+    }
+});
+
+// --- CHAT ENDPOINTS ---
+
+// Get Chat History
+app.get('/api/chat/history', auth, async (req, res) => {
+    try {
+        let chat = await Chat.findOne({ user: req.user._id });
+        if (!chat) {
+            return res.json({ history: [] });
+        }
+        res.json({ history: chat.messages });
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error fetching chat history" });
+    }
+});
+
+// Groq AI Chat with Persistence
 app.post('/api/chat', apiLimiter, async (req, res) => {
     const { message } = req.body;
+    // Check for auth header manually since this endpoint might be public for guests
+    // But we only save history if token is present.
+    // For simplicity, let's assume the frontend sends the token if logged in.
+    // We'll extract user from token if present.
+    let userId = null;
+    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+        try {
+            const token = req.headers.authorization.split(' ')[1];
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
+            userId = decoded.id;
+        } catch (e) {
+            // Invalid token, treat as guest
+        }
+    }
 
     // Input validation
     if (!message || message.length > 500) {
@@ -222,6 +284,8 @@ Answer:`;
         apiKey: process.env.GROQ_API_KEY
     });
 
+    let aiResponse = "";
+
     // Try models in sequence
     for (const modelName of models) {
         try {
@@ -233,8 +297,8 @@ Answer:`;
                 max_tokens: 200
             });
 
-            const response = result.choices[0].message.content;
-            return res.json({ response }); // Success! Return immediately
+            aiResponse = result.choices[0].message.content;
+            break; // Success!
 
         } catch (error) {
             console.warn(`⚠️ Model ${modelName} failed:`, error.message);
@@ -242,11 +306,30 @@ Answer:`;
         }
     }
 
-    // If all models fail
-    console.error("❌ All AI models failed.");
-    res.json({
-        response: `I'm currently offline due to high traffic. Please try again in a few minutes or check the News section!`
-    });
+    if (!aiResponse) {
+        console.error("❌ All AI models failed.");
+        return res.json({
+            response: `I'm currently offline due to high traffic. Please try again in a few minutes or check the News section!`
+        });
+    }
+
+    // Save to Database if user is logged in
+    if (userId) {
+        try {
+            let chat = await Chat.findOne({ user: userId });
+            if (!chat) {
+                chat = new Chat({ user: userId, messages: [] });
+            }
+            chat.messages.push({ role: 'user', content: message });
+            chat.messages.push({ role: 'assistant', content: aiResponse });
+            chat.updatedAt = Date.now();
+            await chat.save();
+        } catch (dbError) {
+            console.error("Error saving chat history:", dbError);
+        }
+    }
+
+    res.json({ response: aiResponse });
 });
 
 // Import Feedback Model
