@@ -6,7 +6,7 @@ import aiBrainImage from '../assets/ai_brain.png';
 const WelcomeDashboard = () => {
     const navigate = useNavigate();
     return (
-        <div className="min-h-screen h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="fixed inset-0 w-full h-full bg-black flex flex-col items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 opacity-20">
                 <img src={aiBrainImage} alt="" className="w-full h-full object-cover" />
