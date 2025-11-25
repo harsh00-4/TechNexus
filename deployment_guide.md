@@ -44,7 +44,7 @@ We will host the Node.js/Express server on Render.
     - `MONGODB_URI`: Your MongoDB Atlas connection string.
     - `GROQ_API_KEY`: Your Groq API Key.
     - `JWT_SECRET`: A long random string.
-    - `EMAIL_USER` / `EMAIL_PASS`: Your email credentials.
+    - `EMAIL_USER` / `EMAIL_PASS`: (Optional) Your email credentials for feedback.
 
 5.  **Deploy:** Click "Create Web Service". Wait for it to go live. Copy the URL (e.g., `https://technexus-api.onrender.com`).
 
