@@ -583,6 +583,12 @@ app.post('/api/notifications/broadcast', async (req, res) => {
     }
 });
 
+// Helper Function: Sanitize Input
+function sanitizeInput(input) {
+    if (typeof input !== 'string') return input;
+    return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`✓ Server running on http://0.0.0.0:${PORT}`);
     console.log(`✓ Security: Helmet, Manual XSS Protection, HPP, Rate Limiting`);
