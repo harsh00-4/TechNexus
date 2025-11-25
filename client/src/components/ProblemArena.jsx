@@ -29,26 +29,50 @@ const ProblemArena = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    setProblems(problems.map(p => p.id === id ? { ...p, votes: data.votes } : p));
+                    setProblems(problems.map(p => p._id === id ? { ...p, votes: data.votes } : p));
                 }
             })
             .catch(err => console.error("Vote failed", err));
     };
 
-    const handleSubmitProblem = (e) => {
+    const handleSubmitProblem = async (e) => {
         e.preventDefault();
         if (!newProblem.title.trim() || !newProblem.description.trim()) return;
 
-        const problem = {
-            id: problems.length + 1,
-            title: newProblem.title,
-            description: newProblem.description,
-            votes: 0
-        };
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const token = localStorage.getItem('token');
 
-        setProblems([problem, ...problems]);
-        setNewProblem({ title: '', description: '' });
-        setShowForm(false);
+        if (!token) {
+            alert("Please login to post a problem!");
+            return;
+        }
+
+        try {
+            const res = await fetch(`${API_URL}/api/problems`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    title: newProblem.title,
+                    description: newProblem.description,
+                    tags: []
+                })
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                setProblems([data.problem, ...problems]);
+                setNewProblem({ title: '', description: '' });
+                setShowForm(false);
+            } else {
+                alert(data.message || "Failed to post problem");
+            }
+        } catch (err) {
+            console.error("Error posting problem:", err);
+            alert("Error posting problem");
+        }
     };
 
     const getFilteredProblems = () => {
@@ -56,7 +80,8 @@ const ProblemArena = () => {
         if (filter === 'most-voted') {
             sorted.sort((a, b) => b.votes - a.votes);
         } else if (filter === 'recent') {
-            sorted.reverse(); // Newest first
+            // Assuming problems are already sorted by date from backend, but safe to sort again if needed
+            // sorted.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         }
         return sorted;
     };
@@ -83,10 +108,10 @@ const ProblemArena = () => {
 
                 <div className="space-y-6">
                     {filteredProblems.map((problem) => (
-                        <div key={problem.id} className="bg-gray-900/50 dark:bg-gray-900/50 light:bg-white p-6 rounded-lg border border-gray-800 dark:border-gray-800 light:border-gray-200 flex gap-6 items-start">
+                        <div key={problem._id} className="bg-gray-900/50 dark:bg-gray-900/50 light:bg-white p-6 rounded-lg border border-gray-800 dark:border-gray-800 light:border-gray-200 flex gap-6 items-start">
                             <div className="flex flex-col items-center gap-2">
                                 <button
-                                    onClick={() => handleVote(problem.id)}
+                                    onClick={() => handleVote(problem._id)}
                                     className="text-gray-500 dark:text-gray-500 light:text-gray-400 hover:text-cyan-400 dark:hover:text-cyan-400 light:hover:text-blue-600 transition-colors text-2xl"
                                 >
                                     ▲
@@ -97,7 +122,7 @@ const ProblemArena = () => {
                             <div>
                                 <h3 className="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-900">{problem.title}</h3>
                                 <p className="text-gray-400 dark:text-gray-400 light:text-gray-600">{problem.description}</p>
-                                <CommentSection problemId={problem.id} />
+                                <CommentSection problemId={problem._id} />
                             </div>
                         </div>
                     ))}
