@@ -17,13 +17,21 @@ const Feedback = () => {
 
         try {
             const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+            // Add timeout to prevent infinite loading
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+
             const response = await fetch(`${API_URL}/api/feedback`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(formData),
+                signal: controller.signal
             });
+
+            clearTimeout(timeoutId);
 
             const data = await response.json();
 
@@ -32,10 +40,15 @@ const Feedback = () => {
                 setFormData({ name: '', email: '', message: '' });
             } else {
                 setStatus('error');
+                console.error('Backend error:', data.message || data.error);
             }
         } catch (error) {
             console.error('Feedback error:', error);
-            setStatus('error');
+            if (error.name === 'AbortError') {
+                setStatus('timeout');
+            } else {
+                setStatus('error');
+            }
         } finally {
             setLoading(false);
         }
@@ -149,6 +162,18 @@ const Feedback = () => {
                             >
                                 <p className="text-red-300 text-center font-bold">
                                     ❌ Oops! Something went wrong. Please try again.
+                                </p>
+                            </motion.div>
+                        )}
+
+                        {status === 'timeout' && (
+                            <motion.div
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="mt-4 p-4 bg-yellow-900/50 border border-yellow-500 rounded-lg"
+                            >
+                                <p className="text-yellow-300 text-center font-bold">
+                                    ⏱️ Request timed out. Email service may not be configured. Check Render logs.
                                 </p>
                             </motion.div>
                         )}
