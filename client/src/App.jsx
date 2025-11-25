@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import WelcomeDashboard from './components/WelcomeDashboard';
 import MainDashboard from './components/MainDashboard';
 import NewsFeed from './components/NewsFeed';
+import Hackathons from './components/Hackathons';
 import ProblemArena from './components/ProblemArena';
 import AIChat from './components/AIChat';
 import Feedback from './components/Feedback';
@@ -48,7 +49,7 @@ function App() {
                 <Route path="/hackathons" element={
                   <>
                     <Navbar />
-                    <NewsFeed />
+                    <Hackathons />
                   </>
                 } />
 
