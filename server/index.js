@@ -160,7 +160,7 @@ app.post('/api/vote', (req, res) => {
     }
 });
 
-// Groq AI Chat
+// Groq AI Chat with Fallback Models
 app.post('/api/chat', apiLimiter, async (req, res) => {
     const { message } = req.body;
 
@@ -171,35 +171,47 @@ app.post('/api/chat', apiLimiter, async (req, res) => {
         });
     }
 
-    try {
-        const genAI = new Groq({
-            apiKey: process.env.GROQ_API_KEY
-        });
+    const models = [
+        "llama-3.3-70b-versatile", // Latest & Greatest
+        "llama3-70b-8192",         // Stable Fallback
+        "mixtral-8x7b-32768"       // Backup
+    ];
 
-        const model = genAI.chat.completions;
-
-        const prompt = `You are TechNexus AI, an assistant for tech students. Answer concisely (2-3 sentences).
+    const prompt = `You are TechNexus AI, an assistant for tech students. Answer concisely (2-3 sentences).
 
 Question: ${message}
 
 Answer:`;
 
-        const result = await model.create({
-            messages: [{ role: "user", content: prompt }],
-            model: "llama-3.3-70b-versatile",
-            temperature: 0.7,
-            max_tokens: 200
-        });
+    const genAI = new Groq({
+        apiKey: process.env.GROQ_API_KEY
+    });
 
-        const response = result.choices[0].message.content;
-        res.json({ response });
-    } catch (error) {
-        const errorMsg = error.message || error.toString();
-        console.error("Groq AI error:", errorMsg);
-        res.json({
-            response: `I'm having trouble connecting right now. Check out our News and Problem sections while I get back online!`
-        });
+    // Try models in sequence
+    for (const modelName of models) {
+        try {
+            console.log(`🤖 Attempting chat with model: ${modelName}`);
+            const result = await genAI.chat.completions.create({
+                messages: [{ role: "user", content: prompt }],
+                model: modelName,
+                temperature: 0.7,
+                max_tokens: 200
+            });
+
+            const response = result.choices[0].message.content;
+            return res.json({ response }); // Success! Return immediately
+
+        } catch (error) {
+            console.warn(`⚠️ Model ${modelName} failed:`, error.message);
+            // Continue to next model
+        }
     }
+
+    // If all models fail
+    console.error("❌ All AI models failed.");
+    res.json({
+        response: `I'm currently offline due to high traffic. Please try again in a few minutes or check the News section!`
+    });
 });
 
 // Import Feedback Model
