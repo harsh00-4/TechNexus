@@ -130,6 +130,9 @@ let problems = [
     { id: 2, title: "React State Management", votes: 8, description: "Redux vs Context API in 2025?" }
 ];
 
+// Import Problem Model
+const Problem = require('./models/Problem');
+
 // Routes
 app.get('/api/news', (req, res) => {
     const news = autoUpdater.getNews();
@@ -145,18 +148,50 @@ app.get('/api/hackathons', (req, res) => {
     ]);
 });
 
-app.get('/api/problems', (req, res) => {
-    res.json(problems);
+// Get all problems
+app.get('/api/problems', async (req, res) => {
+    try {
+        const problems = await Problem.find().sort({ createdAt: -1 });
+        res.json(problems);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching problems" });
+    }
 });
 
-app.post('/api/vote', (req, res) => {
+// Post a new problem
+app.post('/api/problems', auth, async (req, res) => {
+    const { title, description, tags } = req.body;
+    if (!title || !description) {
+        return res.status(400).json({ success: false, message: "Title and description required" });
+    }
+    try {
+        const newProblem = new Problem({
+            title,
+            description,
+            tags: tags || [],
+            author: req.user._id
+        });
+        await newProblem.save();
+        res.json({ success: true, problem: newProblem });
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error creating problem" });
+    }
+});
+
+// Vote on a problem
+app.post('/api/vote', async (req, res) => {
     const { id } = req.body;
-    const problem = problems.find(p => p.id === id);
-    if (problem) {
-        problem.votes += 1;
-        res.json({ success: true, votes: problem.votes });
-    } else {
-        res.status(404).json({ success: false, message: "Problem not found" });
+    try {
+        const problem = await Problem.findById(id);
+        if (problem) {
+            problem.votes += 1;
+            await problem.save();
+            res.json({ success: true, votes: problem.votes });
+        } else {
+            res.status(404).json({ success: false, message: "Problem not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error voting" });
     }
 });
 
