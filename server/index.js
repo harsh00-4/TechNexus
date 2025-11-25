@@ -1,3 +1,5 @@
+console.log('🚀 Starting TechNexus Server...'); // Debug log
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -25,6 +27,11 @@ const enhancedAutoUpdater = require('./monitoring/enhancedAutoUpdater');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Root Route for Health Checks
+app.get('/', (req, res) => {
+    res.send('TechNexus Server is Running! 🚀');
+});
 
 // Initialize Monitoring Systems
 errorMonitor.setupGlobalErrorHandlers();
@@ -546,12 +553,11 @@ app.post('/api/notifications/broadcast', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`✓ Server running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`✓ Server running on http://0.0.0.0:${PORT}`);
     console.log(`✓ Security: Helmet, Manual XSS Protection, HPP, Rate Limiting`);
     console.log(`✓ Antivirus: ClamAV integration (optional)`);
     console.log(`✓ FREE Auto-updates: Active (Dev.to + Unstop)`);
     console.log(`✓ Daily Updates: News & Hackathons refresh every 24 hours`);
     console.log(`✓ Cost: $0 FOREVER`);
 });
-

@@ -404,3 +404,752 @@ Error: Critical memory usage: 94%
     at process.processTimers (node:internal/timers:541:7)
 Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":29}
 
+[2025-11-25T05:43:18.526Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":32}
+
+[2025-11-25T05:43:18.575Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":29}
+
+[2025-11-25T05:44:18.532Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":32}
+
+[2025-11-25T05:44:18.579Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:45:18.542Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":32}
+
+[2025-11-25T05:45:18.586Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:46:18.556Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":32}
+
+[2025-11-25T05:46:18.601Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:47:18.559Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":32}
+
+[2025-11-25T05:47:18.603Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:48:18.565Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":32}
+
+[2025-11-25T05:48:18.607Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:49:18.571Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":32}
+
+[2025-11-25T05:49:18.616Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":27,"heapTotalMB":30}
+
+[2025-11-25T05:50:18.579Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":32}
+
+[2025-11-25T05:50:18.624Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:51:18.584Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":32}
+
+[2025-11-25T05:51:18.628Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:52:18.588Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":32}
+
+[2025-11-25T05:52:18.635Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:53:18.599Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":33}
+
+[2025-11-25T05:53:18.644Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:54:18.602Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":33}
+
+[2025-11-25T05:54:18.650Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:55:18.608Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":33}
+
+[2025-11-25T05:55:18.654Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:56:18.616Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T05:56:18.663Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:57:18.615Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T05:57:18.677Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T05:58:18.629Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T05:59:18.646Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T05:59:18.708Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T06:00:18.659Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T06:00:18.719Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T06:01:18.669Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T06:01:18.729Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T06:02:18.734Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T06:03:18.752Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T06:04:18.702Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T06:04:18.762Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-25T06:05:18.712Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T06:05:18.773Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:06:18.714Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T06:06:18.776Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:07:18.724Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T06:07:18.788Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:08:18.737Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T06:08:18.797Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:09:18.741Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-25T06:09:18.804Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:10:18.745Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":33}
+
+[2025-11-25T06:10:18.807Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:11:18.755Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":33}
+
+[2025-11-25T06:11:18.817Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:12:18.772Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":33}
+
+[2025-11-25T06:12:18.832Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:13:18.776Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:13:18.839Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:14:18.789Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:14:18.852Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:15:18.794Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:15:18.856Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:16:18.811Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:16:18.856Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:17:18.824Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:18:18.827Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:18:18.876Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:19:18.845Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:19:18.888Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:20:18.852Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:20:18.899Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:21:18.861Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:21:18.905Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:22:18.860Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:22:18.907Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:23:18.874Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:23:18.919Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:24:18.876Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:24:18.921Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:25:18.881Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:25:18.928Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:26:18.893Z] [INFO] Critical memory usage: 96%
+Error: Critical memory usage: 96%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":34}
+
+[2025-11-25T06:26:18.939Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:27:18.896Z] [INFO] Critical memory usage: 96%
+Error: Critical memory usage: 96%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":34}
+
+[2025-11-25T06:27:18.942Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:28:18.907Z] [INFO] Critical memory usage: 96%
+Error: Critical memory usage: 96%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":34}
+
+[2025-11-25T06:28:18.954Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":31}
+
+[2025-11-25T06:29:18.910Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":34}
+
+[2025-11-25T06:29:18.957Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:30:18.920Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":34}
+
+[2025-11-25T06:30:18.967Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:31:18.924Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-25T06:31:18.970Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:32:18.929Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":35}
+
+[2025-11-25T06:32:18.975Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:33:18.932Z] [INFO] Critical memory usage: 97%
+Error: Critical memory usage: 97%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":34}
+
+[2025-11-25T06:33:18.978Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:34:18.944Z] [INFO] Critical memory usage: 96%
+Error: Critical memory usage: 96%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":34}
+
+[2025-11-25T06:34:18.991Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:35:18.945Z] [INFO] Critical memory usage: 96%
+Error: Critical memory usage: 96%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":34}
+
+[2025-11-25T06:35:18.993Z] [INFO] Critical memory usage: 91%
+Error: Critical memory usage: 91%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":32}
+
+[2025-11-25T06:36:18.961Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":34}
+
+[2025-11-25T06:36:19.004Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:37:19.011Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":29,"heapTotalMB":31}
+
+[2025-11-25T06:38:19.007Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":30,"heapTotalMB":31}
+
+[2025-11-25T07:00:38.061Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:124:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":26,"heapTotalMB":28}
+

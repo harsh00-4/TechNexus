@@ -167,3 +167,23 @@
 [2025-11-25T05:22:50.610Z] ✅ Hackathons updated: 10 events
 [2025-11-25T05:22:50.615Z] === Data refresh completed in 0.10s ===
 [2025-11-25T05:22:50.617Z] News: fulfilled, Hackathons: fulfilled
+[2025-11-25T06:59:38.142Z] Auto-updates initialized:
+[2025-11-25T06:59:38.144Z] - News: Every 180 minutes
+[2025-11-25T06:59:38.145Z] - Hackathons: Every 360 minutes
+[2025-11-25T06:59:38.147Z] === Starting data refresh ===
+[2025-11-25T06:59:38.149Z] Starting news update...
+[2025-11-25T06:59:38.162Z] Starting hackathon update...
+[2025-11-25T06:59:38.315Z] ✅ News updated: 5 articles
+[2025-11-25T06:59:38.549Z] Auto-updates initialized:
+[2025-11-25T06:59:38.550Z] - News: Every 180 minutes
+[2025-11-25T06:59:38.551Z] - Hackathons: Every 360 minutes
+[2025-11-25T06:59:38.552Z] === Starting data refresh ===
+[2025-11-25T06:59:38.553Z] Starting news update...
+[2025-11-25T06:59:38.571Z] Starting hackathon update...
+[2025-11-25T06:59:38.716Z] ✅ News updated: 5 articles
+[2025-11-25T06:59:39.646Z] ✅ Hackathons updated: 10 events
+[2025-11-25T06:59:39.652Z] === Data refresh completed in 1.10s ===
+[2025-11-25T06:59:39.653Z] News: fulfilled, Hackathons: fulfilled
+[2025-11-25T06:59:39.832Z] ✅ Hackathons updated: 10 events
+[2025-11-25T06:59:39.838Z] === Data refresh completed in 1.69s ===
+[2025-11-25T06:59:39.838Z] News: fulfilled, Hackathons: fulfilled
