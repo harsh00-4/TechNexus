@@ -1,0 +1,806 @@
+[2025-11-25T04:24:50.859Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:24:50.859Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 35MB / 61MB (58%)",
+    "details": {
+      "heapUsed": 35,
+      "heapTotal": 61,
+      "usagePercent": 58
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:25:24.188Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:25:24.188Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 30MB / 62MB (48%)",
+    "details": {
+      "heapUsed": 30,
+      "heapTotal": 62,
+      "usagePercent": 48
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:30:24.200Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:30:24.200Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 27MB / 29MB (92%)",
+    "details": {
+      "heapUsed": 27,
+      "heapTotal": 29,
+      "usagePercent": 92
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:35:24.199Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:35:24.199Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 27MB / 29MB (93%)",
+    "details": {
+      "heapUsed": 27,
+      "heapTotal": 29,
+      "usagePercent": 93
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:37:49.223Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:37:49.223Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 34MB / 61MB (56%)",
+    "details": {
+      "heapUsed": 34,
+      "heapTotal": 61,
+      "usagePercent": 56
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:42:49.270Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:42:49.270Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 27MB / 29MB (92%)",
+    "details": {
+      "heapUsed": 27,
+      "heapTotal": 29,
+      "usagePercent": 92
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:47:49.241Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:47:49.241Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "warning",
+    "message": "Memory: 29MB / 32MB (90%)",
+    "details": {
+      "heapUsed": 29,
+      "heapTotal": 32,
+      "usagePercent": 90
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:48:39.105Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:48:39.105Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 35MB / 61MB (57%)",
+    "details": {
+      "heapUsed": 35,
+      "heapTotal": 61,
+      "usagePercent": 57
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:48:54.311Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:48:54.311Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 36MB / 60MB (59%)",
+    "details": {
+      "heapUsed": 36,
+      "heapTotal": 60,
+      "usagePercent": 59
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:49:03.824Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:49:03.824Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 31MB / 62MB (49%)",
+    "details": {
+      "heapUsed": 31,
+      "heapTotal": 62,
+      "usagePercent": 49
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:54:03.831Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:54:03.831Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "warning",
+    "message": "Memory: 27MB / 30MB (89%)",
+    "details": {
+      "heapUsed": 27,
+      "heapTotal": 30,
+      "usagePercent": 89
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T04:56:18.752Z] Health Check:
+{
+  "timestamp": "2025-11-25T04:56:18.752Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 34MB / 61MB (57%)",
+    "details": {
+      "heapUsed": 34,
+      "heapTotal": 61,
+      "usagePercent": 57
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:09:02.321Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:09:02.321Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 32MB / 61MB (53%)",
+    "details": {
+      "heapUsed": 32,
+      "heapTotal": 61,
+      "usagePercent": 53
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:14:02.324Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:14:02.324Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 29MB / 31MB (92%)",
+    "details": {
+      "heapUsed": 29,
+      "heapTotal": 31,
+      "usagePercent": 92
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:16:04.073Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:16:04.073Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 35MB / 60MB (58%)",
+    "details": {
+      "heapUsed": 35,
+      "heapTotal": 60,
+      "usagePercent": 58
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:17:20.157Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:17:20.157Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 35MB / 61MB (58%)",
+    "details": {
+      "heapUsed": 35,
+      "heapTotal": 61,
+      "usagePercent": 58
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:21:04.084Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:21:04.084Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 28MB / 31MB (92%)",
+    "details": {
+      "heapUsed": 28,
+      "heapTotal": 31,
+      "usagePercent": 92
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:22:14.136Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:22:14.136Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 30MB / 61MB (49%)",
+    "details": {
+      "heapUsed": 30,
+      "heapTotal": 61,
+      "usagePercent": 49
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:22:14.133Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:22:14.133Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 36MB / 61MB (58%)",
+    "details": {
+      "heapUsed": 36,
+      "heapTotal": 61,
+      "usagePercent": 58
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:22:16.341Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:22:16.341Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 31MB / 62MB (50%)",
+    "details": {
+      "heapUsed": 31,
+      "heapTotal": 62,
+      "usagePercent": 50
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:22:16.316Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:22:16.316Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 31MB / 62MB (50%)",
+    "details": {
+      "heapUsed": 31,
+      "heapTotal": 62,
+      "usagePercent": 50
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:22:18.419Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:22:18.419Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 31MB / 62MB (50%)",
+    "details": {
+      "heapUsed": 31,
+      "heapTotal": 62,
+      "usagePercent": 50
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:22:18.505Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:22:18.505Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "healthy",
+    "message": "Memory: 30MB / 62MB (49%)",
+    "details": {
+      "heapUsed": 30,
+      "heapTotal": 62,
+      "usagePercent": 49
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:27:18.427Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:27:18.427Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 29MB / 31MB (93%)",
+    "details": {
+      "heapUsed": 29,
+      "heapTotal": 31,
+      "usagePercent": 93
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:27:18.520Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:27:18.520Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 27MB / 29MB (91%)",
+    "details": {
+      "heapUsed": 27,
+      "heapTotal": 29,
+      "usagePercent": 91
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:32:18.441Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:32:18.441Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 29MB / 31MB (94%)",
+    "details": {
+      "heapUsed": 29,
+      "heapTotal": 31,
+      "usagePercent": 94
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:32:18.534Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:32:18.534Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 27MB / 29MB (91%)",
+    "details": {
+      "heapUsed": 27,
+      "heapTotal": 29,
+      "usagePercent": 91
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:37:18.451Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:37:18.451Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 29MB / 32MB (91%)",
+    "details": {
+      "heapUsed": 29,
+      "heapTotal": 32,
+      "usagePercent": 91
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:37:18.546Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:37:18.546Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 27MB / 29MB (93%)",
+    "details": {
+      "heapUsed": 27,
+      "heapTotal": 29,
+      "usagePercent": 93
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:42:18.455Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:42:18.455Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 30MB / 32MB (94%)",
+    "details": {
+      "heapUsed": 30,
+      "heapTotal": 32,
+      "usagePercent": 94
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+
+[2025-11-25T05:42:18.547Z] Health Check:
+{
+  "timestamp": "2025-11-25T05:42:18.547Z",
+  "database": {
+    "status": "healthy",
+    "message": "Database connected"
+  },
+  "apiEndpoints": {
+    "status": "healthy",
+    "message": "All endpoints responding"
+  },
+  "memory": {
+    "status": "critical",
+    "message": "Memory: 27MB / 29MB (92%)",
+    "details": {
+      "heapUsed": 27,
+      "heapTotal": 29,
+      "usagePercent": 92
+    }
+  },
+  "externalAPIs": {
+    "status": "healthy",
+    "message": "All external APIs accessible"
+  }
+}
+

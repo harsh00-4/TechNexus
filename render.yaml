@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: technexus-api
+    env: node
+    root: server
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ALERT_ENABLED
+        value: "true"
+      - key: AI_ERROR_ANALYSIS
+        value: "true"
