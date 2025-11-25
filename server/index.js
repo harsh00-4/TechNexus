@@ -202,7 +202,10 @@ Answer:`;
     }
 });
 
-// Feedback endpoint with Validation
+// Import Feedback Model
+const Feedback = require('./models/Feedback');
+
+// Feedback endpoint with Database Storage + Email
 app.post('/api/feedback', apiLimiter, async (req, res) => {
     const { name, email, message } = req.body;
 
@@ -217,46 +220,61 @@ app.post('/api/feedback', apiLimiter, async (req, res) => {
         return res.status(400).json({ success: false, message: 'Invalid email address.' });
     }
 
-    // Sanitize Input (Double check)
     if (message.length > 1000) {
         return res.status(400).json({ success: false, message: 'Message too long (max 1000 chars).' });
     }
 
     try {
-        // Create transporter using Gmail
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS
-            }
+        // 1. Save to Database (Primary Storage)
+        const newFeedback = new Feedback({
+            name: sanitizeInput(name),
+            email: sanitizeInput(email),
+            message: sanitizeInput(message)
         });
+        await newFeedback.save();
+        console.log(`✅ Feedback saved to database from ${email}`);
 
-        // Sanitize inputs for email
-        const safeName = sanitizeInput(name);
-        const safeEmail = sanitizeInput(email);
-        const safeMessage = sanitizeInput(message);
+        // 2. Try to Send Email (Secondary/Optional)
+        // Only attempt if credentials exist
+        if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+            try {
+                const transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: process.env.EMAIL_USER,
+                        pass: process.env.EMAIL_PASS
+                    }
+                });
 
-        // Email content
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER, // Send to yourself
-            subject: `TechNexus Feedback from ${safeName}`,
-            html: `
-                <h2>New Feedback from TechNexus</h2>
-                <p><strong>From:</strong> ${safeName}</p>
-                <p><strong>Email:</strong> ${safeEmail}</p>
-                <p><strong>Message:</strong></p>
-                <p>${safeMessage}</p>
-            `
-        };
+                const mailOptions = {
+                    from: process.env.EMAIL_USER,
+                    to: process.env.EMAIL_USER,
+                    subject: `TechNexus Feedback from ${name}`,
+                    html: `
+                        <h2>New Feedback from TechNexus</h2>
+                        <p><strong>From:</strong> ${name}</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>Message:</strong></p>
+                        <p>${message}</p>
+                    `
+                };
 
-        await transporter.sendMail(mailOptions);
-        console.log(`✅ Feedback email sent successfully to ${process.env.EMAIL_USER}`);
-        res.json({ success: true, message: 'Feedback sent successfully!' });
+                await transporter.sendMail(mailOptions);
+                console.log(`✅ Feedback email sent to ${process.env.EMAIL_USER}`);
+            } catch (emailError) {
+                console.warn('⚠️ Email sending failed (but saved to DB):', emailError.message);
+                // We do NOT fail the request if email fails, since DB save worked
+            }
+        } else {
+            console.log('ℹ️ Email credentials missing, skipping email send.');
+        }
+
+        // Return success since DB save worked
+        res.json({ success: true, message: 'Feedback received successfully!' });
+
     } catch (error) {
-        console.error('❌ Email sending failed:', error);
-        res.json({ success: false, message: 'Failed to send feedback', error: error.message });
+        console.error('❌ Feedback error:', error);
+        res.status(500).json({ success: false, message: 'Failed to save feedback.', error: error.message });
     }
 });
 
