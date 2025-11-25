@@ -6,7 +6,7 @@ import aiBrainImage from '../assets/ai_brain.png';
 const WelcomeDashboard = () => {
     const navigate = useNavigate();
     return (
-        <div className="h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="min-h-screen h-screen w-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 opacity-20">
                 <img src={aiBrainImage} alt="" className="w-full h-full object-cover" />
@@ -18,10 +18,10 @@ const WelcomeDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="z-10 text-center"
+                className="z-10 text-center px-4 md:px-6"
             >
                 <motion.h1
-                    className="text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
@@ -29,7 +29,7 @@ const WelcomeDashboard = () => {
                     TECHNEXUS
                 </motion.h1>
                 <motion.p
-                    className="text-2xl text-cyan-400 mb-8 font-semibold tracking-wide"
+                    className="text-lg sm:text-xl md:text-2xl text-cyan-400 mb-6 md:mb-8 font-semibold tracking-wide"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
@@ -37,7 +37,7 @@ const WelcomeDashboard = () => {
                     One Platform. All Opportunities.
                 </motion.p>
                 <motion.p
-                    className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
+                    className="text-sm sm:text-base md:text-lg text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto px-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
@@ -49,7 +49,7 @@ const WelcomeDashboard = () => {
                     whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(6,182,212,0.5)" }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => navigate('/dashboard')}
-                    className="px-8 py-4 bg-cyan-600 text-white rounded-none border border-cyan-400 font-bold tracking-widest hover:bg-cyan-500 transition-all"
+                    className="px-6 py-3 md:px-8 md:py-4 bg-cyan-600 text-white rounded-none border border-cyan-400 font-bold text-sm md:text-base tracking-widest hover:bg-cyan-500 transition-all"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
