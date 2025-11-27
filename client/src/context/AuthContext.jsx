@@ -49,18 +49,37 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, password) => {
         try {
             const response = await axios.post('/api/auth/login', { email, password });
+            console.log('Login response:', response.data);
+
             if (response.data.success) {
                 const { token, user } = response.data;
+
+                // Set token in localStorage first
                 localStorage.setItem('token', token);
+
+                // Set axios header
+                axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+                // Update state
                 setToken(token);
                 setUser(user);
-                axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+                // Wait a bit to ensure state updates
+                await new Promise(resolve => setTimeout(resolve, 100));
+
+                console.log('Login successful, user:', user);
                 return { success: true };
+            } else {
+                return {
+                    success: false,
+                    message: response.data.message || 'Login failed'
+                };
             }
         } catch (error) {
+            console.error('Login error:', error);
             return {
                 success: false,
-                message: error.response?.data?.message || 'Login failed'
+                message: error.response?.data?.message || 'Login failed. Please try again.'
             };
         }
     };
@@ -69,18 +88,37 @@ export const AuthProvider = ({ children }) => {
     const signup = async (name, email, password) => {
         try {
             const response = await axios.post('/api/auth/signup', { name, email, password });
+            console.log('Signup response:', response.data);
+
             if (response.data.success) {
                 const { token, user } = response.data;
+
+                // Set token in localStorage first
                 localStorage.setItem('token', token);
+
+                // Set axios header
+                axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+                // Update state
                 setToken(token);
                 setUser(user);
-                axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+                // Wait a bit to ensure state updates
+                await new Promise(resolve => setTimeout(resolve, 100));
+
+                console.log('Signup successful, user:', user);
                 return { success: true };
+            } else {
+                return {
+                    success: false,
+                    message: response.data.message || 'Signup failed'
+                };
             }
         } catch (error) {
+            console.error('Signup error:', error);
             return {
                 success: false,
-                message: error.response?.data?.message || 'Signup failed'
+                message: error.response?.data?.message || 'Signup failed. Please try again.'
             };
         }
     };

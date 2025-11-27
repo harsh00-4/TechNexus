@@ -24,6 +24,7 @@ const healthCheck = require('./monitoring/healthCheck');
 const selfHealing = require('./monitoring/selfHealing');
 const alertSystem = require('./monitoring/alertSystem');
 const enhancedAutoUpdater = require('./monitoring/enhancedAutoUpdater');
+const dataCleanupService = require('./services/dataCleanup');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -117,7 +118,7 @@ const apiLimiter = rateLimit({
 
 // CORS Configuration (Restrict to frontend)
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'https://tech-nexus-5prj.vercel.app'], // Production URL added
+    origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'https://tech-nexus-5prj.vercel.app', 'http://127.0.0.1:5173'], // Production URL added
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -133,22 +134,201 @@ let problems = [
 // Import Models
 const Problem = require('./models/Problem');
 const Comment = require('./models/Comment');
-const Chat = require('./models/Chat');
+const aiContentGenerator = require('./services/aiContentGenerator');
 
-// Routes
-app.get('/api/news', (req, res) => {
-    const news = autoUpdater.getNews();
-    res.json(news.length > 0 ? news : [
-        { id: 1, title: "Loading latest tech news...", summary: "Fetching from Dev.to API", date: new Date().toISOString().split('T')[0] }
-    ]);
+
+// Routes - AI-Powered News and Hackathons + User Submissions
+const News = require('./models/News');
+const Hackathon = require('./models/Hackathon');
+
+app.get('/api/news', async (req, res) => {
+    try {
+        const forceRefresh = req.query.refresh === 'true';
+
+        // Get AI-generated news
+        const aiNews = await aiContentGenerator.getNews(forceRefresh);
+
+        // Get user-submitted news from database
+        const userNews = await News.find({ userSubmitted: true })
+            .populate('author', 'name email')
+            .sort({ createdAt: -1 })
+            .limit(20)
+            .lean();
+
+        // Format user news
+        const formattedUserNews = userNews.map(n => ({
+            id: n._id,
+            title: n.title,
+            summary: n.summary,
+            date: n.date,
+            url: n.url,
+            verified: n.verified,
+            category: n.category,
+            userSubmitted: true,
+            authorName: n.author?.name || n.authorName,
+            authorId: n.author?._id
+        }));
+
+        // Combine and sort by date
+        const allNews = [...aiNews, ...formattedUserNews].sort((a, b) => {
+            return new Date(b.date) - new Date(a.date);
+        });
+
+        res.json(allNews);
+    } catch (error) {
+        console.error('Error fetching news:', error);
+        res.json([
+            { id: 1, title: "Loading latest tech news...", summary: "AI-powered news generation in progress", date: new Date().toISOString().split('T')[0] }
+        ]);
+    }
 });
 
-app.get('/api/hackathons', (req, res) => {
-    const hackathons = autoUpdater.getHackathons();
-    res.json(hackathons.length > 0 ? hackathons : [
-        { id: 1, name: "Loading hackathons...", date: "TBD", status: "Upcoming" }
-    ]);
+// User submits news
+app.post('/api/news/publish', auth, async (req, res) => {
+    try {
+        const { title, summary, url, category } = req.body;
+
+        if (!title || !summary) {
+            return res.status(400).json({ success: false, message: 'Title and summary are required' });
+        }
+
+        const newNews = new News({
+            title,
+            summary,
+            url: url || '',
+            category: category || 'Tech',
+            date: new Date().toISOString().split('T')[0],
+            userSubmitted: true,
+            author: req.user._id,
+            authorName: req.user.name,
+            verified: false, // User content not auto-verified
+            aiGenerated: false
+        });
+
+        await newNews.save();
+
+        res.json({
+            success: true,
+            message: 'News published successfully!',
+            news: newNews
+        });
+    } catch (error) {
+        console.error('Error publishing news:', error);
+        res.status(500).json({ success: false, message: 'Error publishing news' });
+    }
 });
+
+app.get('/api/hackathons', async (req, res) => {
+    try {
+        const forceRefresh = req.query.refresh === 'true';
+
+        // Get AI-generated hackathons
+        const aiHackathons = await aiContentGenerator.getHackathons(forceRefresh);
+
+        // Get user-submitted hackathons from database
+        const userHackathons = await Hackathon.find({ userSubmitted: true })
+            .populate('author', 'name email')
+            .sort({ createdAt: -1 })
+            .limit(20)
+            .lean();
+
+        // Format user hackathons
+        const formattedUserHackathons = userHackathons.map(h => ({
+            id: h._id,
+            name: h.name,
+            date: h.date,
+            endDate: h.endDate,
+            status: h.status,
+            venue: h.venue,
+            venueType: h.venueType,
+            city: h.city,
+            state: h.state,
+            theme: h.theme,
+            prizePool: h.prizePool,
+            organizer: h.organizer,
+            registrationLink: h.registrationLink,
+            description: h.description,
+            userSubmitted: true,
+            authorName: h.author?.name || h.authorName,
+            authorId: h.author?._id
+        }));
+
+        // Combine and sort by date
+        const allHackathons = [...aiHackathons, ...formattedUserHackathons].sort((a, b) => {
+            return new Date(a.date) - new Date(b.date);
+        });
+
+        res.json(allHackathons);
+    } catch (error) {
+        console.error('Error fetching hackathons:', error);
+        res.json([
+            { id: 1, name: "Loading hackathons...", date: "TBD", status: "Upcoming" }
+        ]);
+    }
+});
+
+// User submits hackathon
+app.post('/api/hackathons/publish', auth, async (req, res) => {
+    try {
+        const { name, description, date, endDate, venue, venueType, city, state, theme, prizePool, organizer, registrationLink } = req.body;
+
+        if (!name || !description || !date) {
+            return res.status(400).json({ success: false, message: 'Name, description, and date are required' });
+        }
+
+        const newHackathon = new Hackathon({
+            name,
+            description,
+            date,
+            endDate: endDate || date,
+            venue: venue || 'TBD',
+            venueType: venueType || 'online',
+            city: city || '',
+            state: state || '',
+            theme: theme || '',
+            prizePool: prizePool || '',
+            organizer: organizer || req.user.name,
+            registrationLink: registrationLink || '',
+            status: 'Upcoming',
+            userSubmitted: true,
+            author: req.user._id,
+            authorName: req.user.name,
+            aiGenerated: false
+        });
+
+        await newHackathon.save();
+
+        res.json({
+            success: true,
+            message: 'Hackathon published successfully!',
+            hackathon: newHackathon
+        });
+    } catch (error) {
+        console.error('Error publishing hackathon:', error);
+        res.status(500).json({ success: false, message: 'Error publishing hackathon' });
+    }
+});
+
+// Manual refresh endpoint for admins
+app.post('/api/refresh-content', auth, async (req, res) => {
+    try {
+        const { type } = req.body; // 'news' or 'hackathons' or 'all'
+
+        if (type === 'news' || type === 'all') {
+            await aiContentGenerator.generateTechNews();
+        }
+
+        if (type === 'hackathons' || type === 'all') {
+            await aiContentGenerator.generateHackathons();
+        }
+
+        res.json({ success: true, message: `${type} content refreshed successfully` });
+    } catch (error) {
+        console.error('Error refreshing content:', error);
+        res.status(500).json({ success: false, message: 'Error refreshing content' });
+    }
+});
+
 
 // Get all problems
 app.get('/api/problems', async (req, res) => {
@@ -228,109 +408,41 @@ app.post('/api/problems/:id/comments', auth, async (req, res) => {
     }
 });
 
-// --- CHAT ENDPOINTS ---
 
-// Get Chat History
-app.get('/api/chat/history', auth, async (req, res) => {
+// Import Chat Routes
+const chatRoutes = require('./routes/chatRoutes');
+app.use('/api/chat', chatRoutes);
+
+// Import Group Routes
+const groupRoutes = require('./routes/groupRoutes');
+app.use('/api/groups', groupRoutes);
+
+// User search endpoint (for finding users to message or add to groups)
+app.get('/api/users/search', auth, async (req, res) => {
     try {
-        let chat = await Chat.findOne({ user: req.user._id });
-        if (!chat) {
-            return res.json({ history: [] });
+        const { query } = req.query;
+
+        if (!query || query.length < 2) {
+            return res.json({ success: true, users: [] });
         }
-        res.json({ history: chat.messages });
+
+        const users = await User.find({
+            $or: [
+                { name: { $regex: query, $options: 'i' } },
+                { email: { $regex: query, $options: 'i' } }
+            ],
+            _id: { $ne: req.user._id } // Exclude current user
+        })
+            .select('name email')
+            .limit(10);
+
+        res.json({ success: true, users });
     } catch (error) {
-        res.status(500).json({ success: false, message: "Error fetching chat history" });
+        console.error('User search error:', error);
+        res.status(500).json({ success: false, message: 'Error searching users' });
     }
 });
 
-// Groq AI Chat with Persistence
-app.post('/api/chat', apiLimiter, async (req, res) => {
-    const { message } = req.body;
-    // Check for auth header manually since this endpoint might be public for guests
-    // But we only save history if token is present.
-    // For simplicity, let's assume the frontend sends the token if logged in.
-    // We'll extract user from token if present.
-    let userId = null;
-    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
-        try {
-            const token = req.headers.authorization.split(' ')[1];
-            const decoded = jwt.verify(token, process.env.JWT_SECRET);
-            userId = decoded.id;
-        } catch (e) {
-            // Invalid token, treat as guest
-        }
-    }
-
-    // Input validation
-    if (!message || message.length > 500) {
-        return res.status(400).json({
-            response: 'Please provide a valid message (max 500 characters).'
-        });
-    }
-
-    const models = [
-        "llama-3.3-70b-versatile", // Latest & Greatest
-        "llama3-70b-8192",         // Stable Fallback
-        "mixtral-8x7b-32768"       // Backup
-    ];
-
-    const prompt = `You are TechNexus AI, an assistant for tech students. Answer concisely (2-3 sentences).
-
-Question: ${message}
-
-Answer:`;
-
-    const genAI = new Groq({
-        apiKey: process.env.GROQ_API_KEY
-    });
-
-    let aiResponse = "";
-
-    // Try models in sequence
-    for (const modelName of models) {
-        try {
-            console.log(`🤖 Attempting chat with model: ${modelName}`);
-            const result = await genAI.chat.completions.create({
-                messages: [{ role: "user", content: prompt }],
-                model: modelName,
-                temperature: 0.7,
-                max_tokens: 200
-            });
-
-            aiResponse = result.choices[0].message.content;
-            break; // Success!
-
-        } catch (error) {
-            console.warn(`⚠️ Model ${modelName} failed:`, error.message);
-            // Continue to next model
-        }
-    }
-
-    if (!aiResponse) {
-        console.error("❌ All AI models failed.");
-        return res.json({
-            response: `I'm currently offline due to high traffic. Please try again in a few minutes or check the News section!`
-        });
-    }
-
-    // Save to Database if user is logged in
-    if (userId) {
-        try {
-            let chat = await Chat.findOne({ user: userId });
-            if (!chat) {
-                chat = new Chat({ user: userId, messages: [] });
-            }
-            chat.messages.push({ role: 'user', content: message });
-            chat.messages.push({ role: 'assistant', content: aiResponse });
-            chat.updatedAt = Date.now();
-            await chat.save();
-        } catch (dbError) {
-            console.error("Error saving chat history:", dbError);
-        }
-    }
-
-    res.json({ response: aiResponse });
-});
 
 // Import Feedback Model
 const Feedback = require('./models/Feedback');
@@ -572,6 +684,147 @@ app.get('/api/auth/me', auth, async (req, res) => {
     }
 });
 
+// Forgot Password - Request reset token
+app.post('/api/auth/forgot-password', async (req, res) => {
+    try {
+        const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({
+                success: false,
+                message: 'Please provide an email'
+            });
+        }
+
+        // Find user by email
+        const user = await User.findOne({ email: email.toLowerCase() });
+
+        if (!user) {
+            // Don't reveal if user exists or not (security)
+            return res.json({
+                success: true,
+                message: 'If an account exists with that email, a password reset link has been sent.'
+            });
+        }
+
+        // Generate reset token
+        const resetToken = user.generateResetToken();
+        await user.save();
+
+        // Create reset URL
+        const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+
+        // Send email (if email service is configured)
+        if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+            try {
+                const transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: process.env.EMAIL_USER,
+                        pass: process.env.EMAIL_PASS
+                    }
+                });
+
+                const mailOptions = {
+                    from: process.env.EMAIL_USER,
+                    to: user.email,
+                    subject: 'TechNexus Password Reset',
+                    html: `
+                        <h2>Password Reset Request</h2>
+                        <p>You requested a password reset for your TechNexus account.</p>
+                        <p>Click the link below to reset your password:</p>
+                        <a href="${resetUrl}" style="display: inline-block; padding: 10px 20px; background-color: #06b6d4; color: white; text-decoration: none; border-radius: 5px;">Reset Password</a>
+                        <p>This link will expire in 1 hour.</p>
+                        <p>If you didn't request this, please ignore this email.</p>
+                    `
+                };
+
+                await transporter.sendMail(mailOptions);
+                console.log(`✅ Password reset email sent to ${user.email}`);
+            } catch (emailError) {
+                console.warn('⚠️ Email sending failed:', emailError.message);
+            }
+        } else {
+            // For development: log the reset URL
+            console.log(`🔗 Password Reset URL: ${resetUrl}`);
+        }
+
+        res.json({
+            success: true,
+            message: 'If an account exists with that email, a password reset link has been sent.',
+            // In development, include the token
+            ...(process.env.NODE_ENV === 'development' && { resetToken, resetUrl })
+        });
+    } catch (error) {
+        console.error('Forgot password error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error processing password reset request'
+        });
+    }
+});
+
+// Reset Password - Update password with token
+app.post('/api/auth/reset-password/:token', async (req, res) => {
+    try {
+        const { password } = req.body;
+        const { token } = req.params;
+
+        if (!password) {
+            return res.status(400).json({
+                success: false,
+                message: 'Please provide a new password'
+            });
+        }
+
+        if (password.length < 6) {
+            return res.status(400).json({
+                success: false,
+                message: 'Password must be at least 6 characters'
+            });
+        }
+
+        // Hash the token to compare with database
+        const crypto = require('crypto');
+        const hashedToken = crypto
+            .createHash('sha256')
+            .update(token)
+            .digest('hex');
+
+        // Find user with valid reset token
+        const user = await User.findOne({
+            resetPasswordToken: hashedToken,
+            resetPasswordExpires: { $gt: Date.now() }
+        }).select('+resetPasswordToken +resetPasswordExpires');
+
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                message: 'Invalid or expired reset token'
+            });
+        }
+
+        // Update password
+        user.password = password;
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpires = undefined;
+        await user.save();
+
+        console.log(`✅ Password reset successful for ${user.email}`);
+
+        res.json({
+            success: true,
+            message: 'Password reset successful! You can now login with your new password.'
+        });
+    } catch (error) {
+        console.error('Reset password error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error resetting password'
+        });
+    }
+});
+
 // Manual refresh endpoint (optional)
 app.get('/api/refresh', async (req, res) => {
     await enhancedAutoUpdater.refreshData();
@@ -707,11 +960,20 @@ function sanitizeInput(input) {
     return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', async () => {
     console.log(`✓ Server running on http://0.0.0.0:${PORT}`);
     console.log(`✓ Security: Helmet, Manual XSS Protection, HPP, Rate Limiting`);
-    console.log(`✓ Antivirus: ClamAV integration (optional)`);
-    console.log(`✓ FREE Auto-updates: Active (Dev.to + Unstop)`);
-    console.log(`✓ Daily Updates: News & Hackathons refresh every 24 hours`);
+    console.log(`✓ Antivirus: ClamAV integration (optional)`)
+        ;
+    console.log(`🤖 AI-Powered Content: Initializing...`);
+
+    // Initialize AI content generator
+    await aiContentGenerator.initialize();
+
+    console.log(`✓ AI Updates: Tech News & Hackathons refresh every hour`);
     console.log(`✓ Cost: $0 FOREVER`);
+
+    // Start automatic data cleanup (30-day retention)
+    dataCleanupService.startScheduler();
+    console.log(`✓ Data Cleanup: Automatic 30-day retention policy active`);
 });

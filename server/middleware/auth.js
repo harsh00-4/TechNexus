@@ -6,6 +6,8 @@ const auth = async (req, res, next) => {
         // Get token from header
         const token = req.header('Authorization')?.replace('Bearer ', '');
 
+        console.log('Auth middleware hit. Token exists:', !!token);
+
         if (!token) {
             return res.status(401).json({
                 success: false,

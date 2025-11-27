@@ -8,12 +8,15 @@ import MainDashboard from './components/MainDashboard';
 import NewsFeed from './components/NewsFeed';
 import Hackathons from './components/Hackathons';
 import ProblemArena from './components/ProblemArena';
-import AIChat from './components/AIChat';
+import Groups from './components/Groups';
+import CommunicationHub from './components/CommunicationHub';
 import Feedback from './components/Feedback';
 import Resources from './components/Resources';
 import About from './components/About';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
 import './index.css';
 
 function App() {
@@ -30,6 +33,8 @@ function App() {
                 {/* Auth Routes */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password/:token" element={<ResetPassword />} />
 
                 {/* Main App Routes */}
                 <Route path="/dashboard" element={
@@ -60,12 +65,20 @@ function App() {
                   </>
                 } />
 
+                <Route path="/groups" element={
+                  <>
+                    <Navbar />
+                    <Groups />
+                  </>
+                } />
+
                 <Route path="/chat" element={
                   <>
                     <Navbar />
-                    <AIChat />
+                    <CommunicationHub />
                   </>
                 } />
+
 
                 <Route path="/feedback" element={
                   <>

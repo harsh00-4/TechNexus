@@ -10,7 +10,7 @@ class SelfHealing {
 
     async reconnectDatabase() {
         if (this.reconnectAttempts >= this.maxReconnectAttempts) {
-            console.error('\x1b[31m[SELF-HEALING]\x1b[0m Max reconnection attempts reached');
+            console.error('\\x1b[31m[SELF-HEALING]\\x1b[0m Max reconnection attempts reached');
             await errorMonitor.logError(
                 new Error('Database reconnection failed after max attempts'),
                 { type: 'self-healing', attempts: this.reconnectAttempts }
@@ -21,20 +21,20 @@ class SelfHealing {
         this.reconnectAttempts++;
         const delay = this.reconnectDelay * Math.pow(2, this.reconnectAttempts - 1); // Exponential backoff
 
-        console.log(`\x1b[33m[SELF-HEALING]\x1b[0m Attempting database reconnection (${this.reconnectAttempts}/${this.maxReconnectAttempts}) in ${delay}ms`);
+        console.log(`\\x1b[33m[SELF-HEALING]\\x1b[0m Attempting database reconnection (${this.reconnectAttempts}/${this.maxReconnectAttempts}) in ${delay}ms`);
 
         await new Promise(resolve => setTimeout(resolve, delay));
 
         try {
             if (mongoose.connection.readyState !== 1) {
                 await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/technexus');
-                console.log('\x1b[32m[SELF-HEALING]\x1b[0m Database reconnected successfully');
+                console.log('\\x1b[32m[SELF-HEALING]\\x1b[0m Database reconnected successfully');
                 this.reconnectAttempts = 0; // Reset on success
                 return true;
             }
             return true;
         } catch (error) {
-            console.error(`\x1b[31m[SELF-HEALING]\x1b[0m Reconnection attempt ${this.reconnectAttempts} failed:`, error.message);
+            console.error(`\\x1b[31m[SELF-HEALING]\\x1b[0m Reconnection attempt ${this.reconnectAttempts} failed:`, error.message);
             await errorMonitor.logError(error, {
                 type: 'self-healing',
                 attempt: this.reconnectAttempts
@@ -49,14 +49,14 @@ class SelfHealing {
         try {
             if (global.gc) {
                 global.gc();
-                console.log('\x1b[32m[SELF-HEALING]\x1b[0m Garbage collection triggered');
+                console.log('\\x1b[32m[SELF-HEALING]\\x1b[0m Garbage collection triggered');
                 return true;
             } else {
-                console.log('\x1b[33m[SELF-HEALING]\x1b[0m Garbage collection not available (run with --expose-gc)');
+                console.log('\\x1b[33m[SELF-HEALING]\\x1b[0m Garbage collection not available (run with --expose-gc)');
                 return false;
             }
         } catch (error) {
-            console.error('\x1b[31m[SELF-HEALING]\x1b[0m Failed to clear memory:', error.message);
+            console.error('\\x1b[31m[SELF-HEALING]\\x1b[0m Failed to clear memory:', error.message);
             return false;
         }
     }
@@ -66,11 +66,11 @@ class SelfHealing {
             try {
                 const result = await operation();
                 if (attempt > 1) {
-                    console.log(`\x1b[32m[SELF-HEALING]\x1b[0m Operation succeeded on attempt ${attempt}`);
+                    console.log(`\\x1b[32m[SELF-HEALING]\\x1b[0m Operation succeeded on attempt ${attempt}`);
                 }
                 return { success: true, result };
             } catch (error) {
-                console.error(`\x1b[33m[SELF-HEALING]\x1b[0m Attempt ${attempt}/${maxRetries} failed:`, error.message);
+                console.error(`\\x1b[33m[SELF-HEALING]\\x1b[0m Attempt ${attempt}/${maxRetries} failed:`, error.message);
 
                 if (attempt === maxRetries) {
                     await errorMonitor.logError(error, {
@@ -88,7 +88,7 @@ class SelfHealing {
 
     setupDatabaseMonitoring() {
         mongoose.connection.on('disconnected', async () => {
-            console.error('\x1b[31m[DATABASE]\x1b[0m MongoDB disconnected');
+            console.error('\\x1b[31m[DATABASE]\\x1b[0m MongoDB disconnected');
             await errorMonitor.logError(
                 new Error('MongoDB connection lost'),
                 { type: 'database-disconnect' }
@@ -99,39 +99,55 @@ class SelfHealing {
         });
 
         mongoose.connection.on('error', async (error) => {
-            console.error('\x1b[31m[DATABASE]\x1b[0m MongoDB error:', error.message);
+            console.error('\\x1b[31m[DATABASE]\\x1b[0m MongoDB error:', error.message);
             await errorMonitor.logError(error, { type: 'database-error' });
         });
 
         mongoose.connection.on('reconnected', () => {
-            console.log('\x1b[32m[DATABASE]\x1b[0m MongoDB reconnected');
+            console.log('\\x1b[32m[DATABASE]\\x1b[0m MongoDB reconnected');
             this.reconnectAttempts = 0;
         });
     }
 
     monitorMemory() {
+        let lastCriticalAlert = 0;
+        let lastHighAlert = 0;
+        const ALERT_COOLDOWN = 5 * 60 * 1000; // 5 minutes between alerts
+
         setInterval(() => {
             const used = process.memoryUsage();
             const heapUsedMB = Math.round(used.heapUsed / 1024 / 1024);
             const heapTotalMB = Math.round(used.heapTotal / 1024 / 1024);
             const usagePercent = Math.round((used.heapUsed / used.heapTotal) * 100);
+            const now = Date.now();
 
             if (usagePercent > 90) {
-                console.warn(`\x1b[31m[MEMORY]\x1b[0m Critical memory usage: ${usagePercent}%`);
-                this.clearMemoryCache();
+                // Only log critical errors once every 5 minutes
+                if (now - lastCriticalAlert > ALERT_COOLDOWN) {
+                    console.warn(`\\x1b[31m[MEMORY]\\x1b[0m Critical memory usage: ${usagePercent}%`);
+                    this.clearMemoryCache();
 
-                errorMonitor.logError(
-                    new Error(`Critical memory usage: ${usagePercent}%`),
-                    { type: 'high-memory', heapUsedMB, heapTotalMB }
-                );
+                    errorMonitor.logError(
+                        new Error(`Critical memory usage: ${usagePercent}%`),
+                        { type: 'high-memory', heapUsedMB, heapTotalMB }
+                    );
+                    lastCriticalAlert = now;
+                } else {
+                    // Just trigger GC without logging
+                    this.clearMemoryCache();
+                }
             } else if (usagePercent > 80) {
-                console.warn(`\x1b[33m[MEMORY]\x1b[0m High memory usage: ${usagePercent}%`);
+                // Only log high memory warnings once every 5 minutes
+                if (now - lastHighAlert > ALERT_COOLDOWN) {
+                    console.warn(`\\x1b[33m[MEMORY]\\x1b[0m High memory usage: ${usagePercent}%`);
+                    lastHighAlert = now;
+                }
             }
         }, 60000); // Check every minute
     }
 
     initialize() {
-        console.log('\x1b[36m[SELF-HEALING]\x1b[0m Initializing self-healing system');
+        console.log('\\x1b[36m[SELF-HEALING]\\x1b[0m Initializing self-healing system');
         this.setupDatabaseMonitoring();
         this.monitorMemory();
     }

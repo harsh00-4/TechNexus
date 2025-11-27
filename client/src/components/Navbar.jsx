@@ -19,8 +19,8 @@ const Navbar = () => {
     const navLinks = [
         { to: '/dashboard', label: 'DASHBOARD' },
         { to: '/news', label: 'NEWS' },
+        { to: '/hackathons', label: 'HACKATHONS' },
         { to: '/arena', label: 'ARENA' },
-        { to: '/chat', label: 'CHAT' },
         { to: '/resources', label: 'RESOURCES' },
         { to: '/about', label: 'ABOUT' },
         { to: '/feedback', label: 'FEEDBACK' },
