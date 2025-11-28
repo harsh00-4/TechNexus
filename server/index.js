@@ -118,7 +118,7 @@ const apiLimiter = rateLimit({
 
 // CORS Configuration (Restrict to frontend)
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'https://tech-nexus-5prj.vercel.app', 'http://127.0.0.1:5173'], // Production URL added
+    origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'https://tech-nexus-5prj.vercel.app', 'https://tech-nexus-iob6.vercel.app', 'http://127.0.0.1:5173'], // Production URL added
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
