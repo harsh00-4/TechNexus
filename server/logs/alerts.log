@@ -610,3 +610,39 @@ Hackathons update failed
 [2025-11-28T08:35:48.672Z] [INFO] Hackathons Update Success
 {"count":10}
 
+[2025-11-28T09:00:28.773Z] [INFO] News Update Success
+{"count":5}
+
+[2025-11-28T09:00:29.465Z] [INFO] Hackathons Update Success
+{"count":10}
+
+[2025-11-28T09:13:31.949Z] [INFO] News Update Success
+{"count":5}
+
+[2025-11-28T09:13:32.827Z] [INFO] Hackathons Update Success
+{"count":10}
+
+[2025-11-28T09:13:47.046Z] [INFO] Hackathons Update Success
+{"count":10}
+
+[2025-11-28T09:13:47.817Z] [INFO] News Update Success
+{"count":5}
+
+[2025-11-28T09:13:57.507Z] [INFO] Hackathons Update Success
+{"count":10}
+
+[2025-11-28T09:13:57.632Z] [INFO] News Update Success
+{"count":5}
+
+[2025-11-28T09:14:06.618Z] [INFO] Hackathons Update Success
+{"count":10}
+
+[2025-11-28T09:14:06.702Z] [INFO] News Update Success
+{"count":5}
+
+[2025-11-28T16:27:08.315Z] [WARNING] ❌ News Update Failed
+News update failed
+
+[2025-11-28T16:27:18.149Z] [INFO] Hackathons Update Success
+{"count":10}
+

@@ -25,6 +25,10 @@ const problemSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    aiGenerated: {
+        type: Boolean,
+        default: false
     }
 });
 

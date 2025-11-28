@@ -1,88 +1,61 @@
-# 🚀 TechNexus - The Ultimate Student Tech Platform
+# TechNexus - The Ultimate Student Tech Platform
 
-![TechNexus Banner](https://img.shields.io/badge/TechNexus-Live-cyan?style=for-the-badge)
-![MERN Stack](https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge)
-![AI Powered](https://img.shields.io/badge/AI-Powered-purple?style=for-the-badge)
+TechNexus is a comprehensive platform designed for students to stay updated with the latest tech news, find hackathons, solve problems, and connect with peers.
 
-TechNexus is a futuristic, AI-powered platform designed to help students discover hackathons, stay updated with tech news, and solve coding problems.
+## 🚀 Quick Start (Docker) - Recommended
 
-## ✨ Features
+The easiest way to run the application is using Docker. This ensures it works on any machine.
 
-- **🤖 AI Assistant:** 24/7 Chatbot powered by Llama 3.3 (Groq) for coding help and career advice.
-- **🏆 Hackathon Discovery:** Auto-updated list of hackathons from Unstop, Devfolio, and more.
-- **📰 Tech News:** Real-time tech news feed from Dev.to.
-- **⚔️ Problem Arena:** Community-driven coding problems with voting system.
-- **🛡️ 24/7 Monitoring:** Self-healing system with AI error analysis.
-- **🎨 Cyberpunk UI:** Glassmorphism design with dark/light mode.
-
-## 🛠️ Tech Stack
-
-- **Frontend:** React (Vite), Tailwind CSS, Framer Motion
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB Atlas
-- **AI:** Groq SDK (Llama 3.3 70B)
-- **Security:** Helmet, Rate Limiting, HPP, Manual XSS Protection
-
----
-
-## 🚀 Quick Start (Local)
-
-1.  **Clone the repository**
+1.  **Prerequisites:** Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+2.  **Run:**
     ```bash
-    git clone https://github.com/yourusername/technexus.git
-    cd technexus
+    docker-compose up --build
+    ```
+3.  **Access:**
+    -   Frontend: http://localhost:5173
+    -   Backend: http://localhost:5000
+
+## 🛠 Manual Setup
+
+### Prerequisites
+-   Node.js (v18+)
+-   MongoDB (Local or Atlas)
+
+### Installation
+
+1.  **Install Dependencies:**
+    ```bash
+    cd server && npm install
+    cd ../client && npm install
     ```
 
-2.  **Install Dependencies**
-    ```bash
-    # Install server dependencies
-    cd server
-    npm install
+2.  **Environment Setup:**
+    -   Copy `server/.env.example` to `server/.env` and configure `MONGODB_URI`.
+    -   Copy `client/.env.example` to `client/.env`.
 
-    # Install client dependencies
-    cd ../client
-    npm install
+3.  **Start Development Servers:**
+    ```powershell
+    .\start-dev.ps1
     ```
 
-3.  **Configure Environment**
-    - Create `server/.env` (copy from `server/.env.example`)
-    - Create `client/.env` (set `VITE_API_URL=http://localhost:5000`)
+## 📚 Documentation
 
-4.  **Run the App**
-    ```bash
-    # Terminal 1: Start Backend
-    cd server
-    npm run dev
+-   [Deployment Guide](deployment_guide.md)
+-   [Troubleshooting](TROUBLESHOOTING.md)
+-   [Quick Start](QUICKSTART.md)
 
-    # Terminal 2: Start Frontend
-    cd client
-    npm run dev
-    ```
+## 🌟 Features
 
----
+-   **Tech News:** AI-curated news feed.
+-   **Hackathons:** Aggregated hackathon listings.
+-   **Problem Arena:** Discuss and solve tech problems.
+-   **Groups & Chat:** Real-time communication.
+-   **Gamification:** Earn points and badges.
 
-## ☁️ Deployment
+## 🤝 Contributing
 
-### Backend (Render)
-1.  Create a new Web Service on [Render](https://render.com).
-2.  Connect your repo.
-3.  Render will automatically detect the `render.yaml` blueprint.
-4.  Add your environment variables (MongoDB URI, API Keys).
+Contributions are welcome! Please read our contributing guidelines.
 
-### Frontend (Vercel)
-1.  Import your repo to [Vercel](https://vercel.com).
-2.  Set Root Directory to `client`.
-3.  Add Environment Variable: `VITE_API_URL` = Your Render Backend URL.
-4.  Deploy!
+## 📄 License
 
----
-
-## 🛡️ Security & Monitoring
-
-- **Antivirus:** Optional ClamAV integration for file uploads.
-- **Rate Limiting:** Protects against DDoS and spam.
-- **Self-Healing:** Server automatically restarts and reconnects to DB on failure.
-
----
-
-Made with ❤️ by TechNexus Team
+MIT

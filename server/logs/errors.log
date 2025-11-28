@@ -617,3 +617,169 @@ Error: Critical memory usage: 92%
     at process.processTimers (node:internal/timers:541:7)
 Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":35}
 
+[2025-11-28T08:47:47.750Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":35}
+
+[2025-11-28T08:52:47.792Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":35}
+
+[2025-11-28T08:57:47.848Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":34,"heapTotalMB":35}
+
+[2025-11-28T09:01:27.912Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-28T09:06:27.953Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-28T09:12:37.829Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":32,"heapTotalMB":34}
+
+[2025-11-28T09:16:06.104Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-28T09:22:02.668Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-28T09:22:02.803Z] [INFO] MongoDB connection lost
+Error: MongoDB connection lost
+    at NativeConnection.<anonymous> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:93:17)
+    at NativeConnection.emit (node:events:508:28)
+    at NativeConnection.set (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongoose\lib\connection.js:149:12)
+    at MongoClient.<anonymous> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:475:25)
+    at MongoClient.emit (node:events:508:28)
+    at Topology.<anonymous> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongodb\lib\mongo_client.js:254:55)
+    at Topology.emit (node:events:508:28)
+    at Topology.serverUpdateHandler (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongodb\lib\sdam\topology.js:409:22)
+    at Server.<anonymous> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongodb\lib\sdam\topology.js:495:77)
+    at Server.emit (node:events:508:28)
+Context: {"type":"database-disconnect"}
+
+[2025-11-28T09:27:02.605Z] [INFO] Critical memory usage: 93%
+Error: Critical memory usage: 93%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":33,"heapTotalMB":35}
+
+[2025-11-28T09:36:34.942Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":34,"heapTotalMB":35}
+
+[2025-11-28T16:27:07.511Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":34,"heapTotalMB":37}
+
+[2025-11-28T16:27:07.792Z] [INFO] getaddrinfo ENOTFOUND dev.to
+Error: getaddrinfo ENOTFOUND dev.to
+    at AxiosError.from (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\axios\dist\node\axios.cjs:914:14)
+    at RedirectableRequest.handleRequestError (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\axios\dist\node\axios.cjs:3515:25)
+    at RedirectableRequest.emit (node:events:520:35)
+    at eventHandlers.<computed> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:508:28)
+    at emitErrorEvent (node:_http_client:108:11)
+    at TLSSocket.socketErrorListener (node:_http_client:575:5)
+    at TLSSocket.emit (node:events:508:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\axios\dist\node\axios.cjs:4731:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async operation (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\enhancedAutoUpdater.js:30:26)
+    at async SelfHealing.retryOperation (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:67:32)
+    at async fetchNewsWithRetry (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\enhancedAutoUpdater.js:36:20)
+    at async Timeout.updateNews [as _onTimeout] (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\enhancedAutoUpdater.js:72:26)
+Context: {"type":"retry-failed","attempts":3}
+
+[2025-11-28T16:27:07.799Z] [INFO] getaddrinfo ENOTFOUND dev.to
+Error: getaddrinfo ENOTFOUND dev.to
+    at AxiosError.from (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\axios\dist\node\axios.cjs:914:14)
+    at RedirectableRequest.handleRequestError (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\axios\dist\node\axios.cjs:3515:25)
+    at RedirectableRequest.emit (node:events:520:35)
+    at eventHandlers.<computed> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:508:28)
+    at emitErrorEvent (node:_http_client:108:11)
+    at TLSSocket.socketErrorListener (node:_http_client:575:5)
+    at TLSSocket.emit (node:events:508:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\axios\dist\node\axios.cjs:4731:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async operation (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\enhancedAutoUpdater.js:30:26)
+    at async SelfHealing.retryOperation (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:67:32)
+    at async fetchNewsWithRetry (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\enhancedAutoUpdater.js:36:20)
+    at async Timeout.updateNews [as _onTimeout] (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\enhancedAutoUpdater.js:72:26)
+Context: {"type":"news-update-failed"}
+
+[2025-11-28T16:27:07.896Z] [INFO] MongoDB connection lost
+Error: MongoDB connection lost
+    at NativeConnection.<anonymous> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:93:17)
+    at NativeConnection.emit (node:events:508:28)
+    at NativeConnection.set (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongoose\lib\connection.js:149:12)
+    at MongoClient.<anonymous> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:475:25)
+    at MongoClient.emit (node:events:508:28)
+    at Topology.<anonymous> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongodb\lib\mongo_client.js:254:55)
+    at Topology.emit (node:events:508:28)
+    at Topology.serverUpdateHandler (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongodb\lib\sdam\topology.js:409:22)
+    at Server.<anonymous> (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\node_modules\mongodb\lib\sdam\topology.js:495:77)
+    at Server.emit (node:events:508:28)
+Context: {"type":"database-disconnect"}
+
+[2025-11-28T16:32:07.876Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":35,"heapTotalMB":37}
+
+[2025-11-28T16:45:08.034Z] [INFO] Critical memory usage: 91%
+Error: Critical memory usage: 91%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":35,"heapTotalMB":38}
+
+[2025-11-28T16:53:08.774Z] [INFO] Critical memory usage: 92%
+Error: Critical memory usage: 92%
+    at Timeout._onTimeout (C:\Users\Asus\.gemini\antigravity\playground\blazing-intergalactic\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":35,"heapTotalMB":38}
+

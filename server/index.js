@@ -322,6 +322,10 @@ app.post('/api/refresh-content', auth, async (req, res) => {
             await aiContentGenerator.generateHackathons();
         }
 
+        if (type === 'problems' || type === 'all') {
+            await aiContentGenerator.generateProblems();
+        }
+
         res.json({ success: true, message: `${type} content refreshed successfully` });
     } catch (error) {
         console.error('Error refreshing content:', error);
@@ -333,9 +337,16 @@ app.post('/api/refresh-content', auth, async (req, res) => {
 // Get all problems
 app.get('/api/problems', async (req, res) => {
     try {
+        const forceRefresh = req.query.refresh === 'true';
+
+        // Get AI problems
+        await aiContentGenerator.getProblems(forceRefresh);
+
+        // Fetch all problems (both user and AI)
         const problems = await Problem.find().sort({ createdAt: -1 });
         res.json(problems);
     } catch (error) {
+        console.error('Error fetching problems:', error);
         res.status(500).json({ message: "Error fetching problems" });
     }
 });

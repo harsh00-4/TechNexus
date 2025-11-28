@@ -1,6 +1,7 @@
 const Groq = require('groq-sdk');
 const News = require('../models/News');
 const Hackathon = require('../models/Hackathon');
+const Problem = require('../models/Problem');
 
 class AIContentGenerator {
     constructor() {
@@ -9,8 +10,10 @@ class AIContentGenerator {
         }) : null;
         this.newsCache = [];
         this.hackathonsCache = [];
+        this.problemsCache = [];
         this.lastNewsUpdate = null;
         this.lastHackathonUpdate = null;
+        this.lastProblemUpdate = null;
         this.updateInterval = 3600000; // 1 hour
     }
 
@@ -194,6 +197,80 @@ Make them realistic with proper dates, real company names as organizers, and att
             }
             return this.getFallbackHackathons();
         }
+    }
+
+    async generateProblems() {
+        try {
+            const prompt = `Generate 5 interesting and challenging coding problems/discussions for a student tech community.
+Focus on: Algorithms, System Design, React Patterns, Database Optimization, and AI Ethics.
+
+Return ONLY a valid JSON array with this exact structure (no markdown, no code blocks):
+[
+  {
+    "title": "Engaging Title (e.g., 'How to optimize React re-renders?')",
+    "description": "Detailed description of the problem or discussion point. Include code snippets if relevant (escaped properly).",
+    "tags": ["React", "Performance", "Frontend"]
+  }
+]
+
+Make them thought-provoking and suitable for discussion.`;
+
+            const completion = await this.groq.chat.completions.create({
+                messages: [
+                    {
+                        role: 'system',
+                        content: 'You are a senior tech lead creating coding challenges. Return ONLY valid JSON array.'
+                    },
+                    {
+                        role: 'user',
+                        content: prompt
+                    }
+                ],
+                model: 'llama-3.3-70b-versatile',
+                temperature: 0.8,
+                max_tokens: 2000
+            });
+
+            let responseText = completion.choices[0]?.message?.content || '[]';
+            responseText = responseText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+            const problems = JSON.parse(responseText);
+
+            // Save to database
+            try {
+                // Clear old AI-generated problems
+                await Problem.deleteMany({ aiGenerated: true });
+
+                // Save new problems
+                const savedProblems = await Problem.insertMany(problems.map(p => ({
+                    ...p,
+                    aiGenerated: true,
+                    votes: Math.floor(Math.random() * 20) + 5 // Random initial votes
+                })));
+
+                console.log(`✅ Saved ${savedProblems.length} problems to database`);
+            } catch (dbError) {
+                console.error('Error saving problems to database:', dbError);
+            }
+
+            this.problemsCache = problems;
+            this.lastProblemUpdate = Date.now();
+            return problems;
+
+        } catch (error) {
+            console.error('Error generating problems:', error);
+            return [];
+        }
+    }
+
+    async getProblems(forceRefresh = false) {
+        const needsUpdate = !this.lastProblemUpdate ||
+            (Date.now() - this.lastProblemUpdate > this.updateInterval) ||
+            forceRefresh;
+
+        if (needsUpdate || this.problemsCache.length === 0) {
+            return await this.generateProblems();
+        }
+        return this.problemsCache;
     }
 
     async loadNewsFromDatabase() {
@@ -456,7 +533,8 @@ Make them realistic with proper dates, real company names as organizers, and att
         try {
             await Promise.all([
                 this.generateTechNews(),
-                this.generateHackathons()
+                this.generateHackathons(),
+                this.generateProblems()
             ]);
             console.log('✅ AI Content Generator initialized successfully');
         } catch (error) {
