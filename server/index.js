@@ -46,6 +46,9 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/technexus
         healthCheck.startPeriodicChecks(300000); // 5 minutes
         enhancedAutoUpdater.startAutoUpdates();
         alertSystem.scheduleDailySummary();
+
+        // Initialize AI Content (Generate data if empty)
+        aiContentGenerator.initialize();
     })
     .catch(async (err) => {
         console.log('⚠️  MongoDB connection error:', err.message);
