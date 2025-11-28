@@ -4,9 +4,9 @@ const Hackathon = require('../models/Hackathon');
 
 class AIContentGenerator {
     constructor() {
-        this.groq = new Groq({
+        this.groq = process.env.GROQ_API_KEY ? new Groq({
             apiKey: process.env.GROQ_API_KEY
-        });
+        }) : null;
         this.newsCache = [];
         this.hackathonsCache = [];
         this.lastNewsUpdate = null;

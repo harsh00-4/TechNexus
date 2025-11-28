@@ -13,7 +13,7 @@ const nodemailer = require('nodemailer');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-const autoUpdater = require('./autoUpdater');
+
 const { scanFile } = require('./utils/antivirus');
 const User = require('./models/User');
 const auth = require('./middleware/auth');

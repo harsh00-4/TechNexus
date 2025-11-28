@@ -994,3 +994,9 @@
 [2025-11-27T18:33:22.435Z] ✅ News updated: 5 articles
 [2025-11-27T18:33:22.437Z] === Data refresh completed in 0.20s ===
 [2025-11-27T18:33:22.439Z] News: fulfilled, Hackathons: fulfilled
+[2025-11-27T20:23:55.063Z] Auto-updates initialized:
+[2025-11-27T20:23:55.064Z] - News: Every 180 minutes
+[2025-11-27T20:23:55.067Z] - Hackathons: Every 360 minutes
+[2025-11-27T20:23:55.068Z] === Starting data refresh ===
+[2025-11-27T20:23:55.075Z] Starting news update...
+[2025-11-27T20:23:55.094Z] Starting hackathon update...
