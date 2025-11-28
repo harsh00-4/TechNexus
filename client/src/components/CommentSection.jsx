@@ -5,16 +5,15 @@ const CommentSection = ({ problemId }) => {
     const [newComment, setNewComment] = useState('');
 
     useEffect(() => {
+        const fetchComments = () => {
+            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+            fetch(`${API_URL}/api/problems/${problemId}/comments`)
+                .then(res => res.json())
+                .then(data => setComments(data))
+                .catch(err => console.error("Failed to fetch comments", err));
+        };
         fetchComments();
     }, [problemId]);
-
-    const fetchComments = () => {
-        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-        fetch(`${API_URL}/api/problems/${problemId}/comments`)
-            .then(res => res.json())
-            .then(data => setComments(data))
-            .catch(err => console.error("Failed to fetch comments", err));
-    };
 
     const handleAddComment = async (e) => {
         e.preventDefault();

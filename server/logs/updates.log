@@ -1000,3 +1000,13 @@
 [2025-11-27T20:23:55.068Z] === Starting data refresh ===
 [2025-11-27T20:23:55.075Z] Starting news update...
 [2025-11-27T20:23:55.094Z] Starting hackathon update...
+[2025-11-28T08:35:47.745Z] Auto-updates initialized:
+[2025-11-28T08:35:47.746Z] - News: Every 180 minutes
+[2025-11-28T08:35:47.747Z] - Hackathons: Every 360 minutes
+[2025-11-28T08:35:47.749Z] === Starting data refresh ===
+[2025-11-28T08:35:47.749Z] Starting news update...
+[2025-11-28T08:35:47.759Z] Starting hackathon update...
+[2025-11-28T08:35:48.259Z] ✅ News updated: 5 articles
+[2025-11-28T08:35:48.671Z] ✅ Hackathons updated: 10 events
+[2025-11-28T08:35:48.672Z] === Data refresh completed in 0.92s ===
+[2025-11-28T08:35:48.673Z] News: fulfilled, Hackathons: fulfilled

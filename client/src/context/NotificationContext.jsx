@@ -1,15 +1,16 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 const NotificationContext = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useNotifications = () => useContext(NotificationContext);
 
 export const NotificationProvider = ({ children }) => {
     const [notifications, setNotifications] = useState([]);
     const [unreadCount, setUnreadCount] = useState(0);
 
-    const fetchNotifications = async () => {
+    const fetchNotifications = useCallback(async () => {
         try {
             const token = localStorage.getItem('token');
             if (!token) return;
@@ -25,7 +26,7 @@ export const NotificationProvider = ({ children }) => {
         } catch (error) {
             console.error('Error fetching notifications:', error);
         }
-    };
+    }, []);
 
     const markAsRead = async (id) => {
         try {
@@ -47,7 +48,7 @@ export const NotificationProvider = ({ children }) => {
         // Poll every 60 seconds
         const interval = setInterval(fetchNotifications, 60000);
         return () => clearInterval(interval);
-    }, []);
+    }, [fetchNotifications]);
 
     return (
         <NotificationContext.Provider value={{ notifications, unreadCount, markAsRead, fetchNotifications }}>

@@ -8,16 +8,15 @@ const ProblemArena = () => {
     const [filter, setFilter] = useState('all'); // all, most-voted, recent
 
     useEffect(() => {
+        const fetchProblems = () => {
+            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+            fetch(`${API_URL}/api/problems`)
+                .then(res => res.json())
+                .then(data => setProblems(data))
+                .catch(err => console.error("Failed to fetch problems", err));
+        };
         fetchProblems();
     }, []);
-
-    const fetchProblems = () => {
-        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-        fetch(`${API_URL}/api/problems`)
-            .then(res => res.json())
-            .then(data => setProblems(data))
-            .catch(err => console.error("Failed to fetch problems", err));
-    };
 
     const handleVote = (id) => {
         const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
