@@ -1065,3 +1065,13 @@
 [2025-11-28T16:27:07.794Z] ❌ News update failed: getaddrinfo ENOTFOUND dev.to
 [2025-11-28T16:27:08.317Z] Using cached news data
 [2025-11-28T16:27:18.114Z] ✅ Hackathons updated: 10 events
+[2025-11-29T12:21:36.831Z] Auto-updates initialized:
+[2025-11-29T12:21:36.833Z] - News: Every 180 minutes
+[2025-11-29T12:21:36.836Z] - Hackathons: Every 360 minutes
+[2025-11-29T12:21:36.838Z] === Starting data refresh ===
+[2025-11-29T12:21:36.842Z] Starting news update...
+[2025-11-29T12:21:36.866Z] Starting hackathon update...
+[2025-11-29T12:21:37.981Z] ✅ News updated: 5 articles
+[2025-11-29T12:21:38.132Z] ✅ Hackathons updated: 10 events
+[2025-11-29T12:21:38.134Z] === Data refresh completed in 1.30s ===
+[2025-11-29T12:21:38.135Z] News: fulfilled, Hackathons: fulfilled

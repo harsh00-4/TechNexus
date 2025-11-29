@@ -1,13 +1,20 @@
 const Groq = require('groq-sdk');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 const News = require('../models/News');
 const Hackathon = require('../models/Hackathon');
 const Problem = require('../models/Problem');
 
 class AIContentGenerator {
     constructor() {
+        // Initialize Groq if key exists
         this.groq = process.env.GROQ_API_KEY ? new Groq({
             apiKey: process.env.GROQ_API_KEY
         }) : null;
+
+        // Initialize Gemini if key exists
+        this.gemini = process.env.GEMINI_API_KEY ? new GoogleGenerativeAI(process.env.GEMINI_API_KEY) : null;
+        this.geminiModel = this.gemini ? this.gemini.getGenerativeModel({ model: "gemini-1.5-flash" }) : null;
+
         this.newsCache = [];
         this.hackathonsCache = [];
         this.problemsCache = [];
@@ -46,23 +53,34 @@ IMPORTANT: For the 'url', randomly select from these reliable sources:
 - https://www.engadget.com/
 Ensure the URL is valid and points to the main site or a relevant category.`;
 
-            const completion = await this.groq.chat.completions.create({
-                messages: [
-                    {
-                        role: 'system',
-                        content: 'You are a tech news generator. Generate realistic, current tech news. Return ONLY valid JSON array, no markdown formatting, no code blocks, no explanations.'
-                    },
-                    {
-                        role: 'user',
-                        content: prompt
-                    }
-                ],
-                model: 'llama-3.3-70b-versatile',
-                temperature: 0.8,
-                max_tokens: 2000
-            });
+            let responseText = '[]';
 
-            let responseText = completion.choices[0]?.message?.content || '[]';
+            if (this.geminiModel) {
+                const result = await this.geminiModel.generateContent(prompt);
+                const response = await result.response;
+                responseText = response.text();
+            } else if (this.groq) {
+                const completion = await this.groq.chat.completions.create({
+                    messages: [
+                        {
+                            role: 'system',
+                            content: 'You are a tech news generator. Generate realistic, current tech news. Return ONLY valid JSON array, no markdown formatting, no code blocks, no explanations.'
+                        },
+                        {
+                            role: 'user',
+                            content: prompt
+                        }
+                    ],
+                    model: 'llama-3.3-70b-versatile',
+                    temperature: 0.8,
+                    max_tokens: 2000
+                });
+                responseText = completion.choices[0]?.message?.content || '[]';
+            } else {
+                throw new Error('No AI provider configured');
+            }
+
+
 
             // Clean up response - remove markdown code blocks if present
             responseText = responseText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
@@ -139,23 +157,34 @@ Return ONLY a valid JSON array with this exact structure (no markdown, no code b
 
 Make them realistic with proper dates, real company names as organizers, and attractive prize pools. ALWAYS use 'https://unstop.com/hackathons' as the registration link to ensure it works.`;
 
-            const completion = await this.groq.chat.completions.create({
-                messages: [
-                    {
-                        role: 'system',
-                        content: 'You are a hackathon event generator for India. Generate realistic upcoming hackathons. Return ONLY valid JSON array, no markdown formatting, no code blocks, no explanations.'
-                    },
-                    {
-                        role: 'user',
-                        content: prompt
-                    }
-                ],
-                model: 'llama-3.3-70b-versatile',
-                temperature: 0.7,
-                max_tokens: 3000
-            });
+            let responseText = '[]';
 
-            let responseText = completion.choices[0]?.message?.content || '[]';
+            if (this.geminiModel) {
+                const result = await this.geminiModel.generateContent(prompt);
+                const response = await result.response;
+                responseText = response.text();
+            } else if (this.groq) {
+                const completion = await this.groq.chat.completions.create({
+                    messages: [
+                        {
+                            role: 'system',
+                            content: 'You are a hackathon event generator for India. Generate realistic upcoming hackathons. Return ONLY valid JSON array, no markdown formatting, no code blocks, no explanations.'
+                        },
+                        {
+                            role: 'user',
+                            content: prompt
+                        }
+                    ],
+                    model: 'llama-3.3-70b-versatile',
+                    temperature: 0.7,
+                    max_tokens: 3000
+                });
+                responseText = completion.choices[0]?.message?.content || '[]';
+            } else {
+                throw new Error('No AI provider configured');
+            }
+
+
 
             // Clean up response
             responseText = responseText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
@@ -215,23 +244,34 @@ Return ONLY a valid JSON array with this exact structure (no markdown, no code b
 
 Make them thought-provoking and suitable for discussion.`;
 
-            const completion = await this.groq.chat.completions.create({
-                messages: [
-                    {
-                        role: 'system',
-                        content: 'You are a senior tech lead creating coding challenges. Return ONLY valid JSON array.'
-                    },
-                    {
-                        role: 'user',
-                        content: prompt
-                    }
-                ],
-                model: 'llama-3.3-70b-versatile',
-                temperature: 0.8,
-                max_tokens: 2000
-            });
+            let responseText = '[]';
 
-            let responseText = completion.choices[0]?.message?.content || '[]';
+            if (this.geminiModel) {
+                const result = await this.geminiModel.generateContent(prompt);
+                const response = await result.response;
+                responseText = response.text();
+            } else if (this.groq) {
+                const completion = await this.groq.chat.completions.create({
+                    messages: [
+                        {
+                            role: 'system',
+                            content: 'You are a senior tech lead creating coding challenges. Return ONLY valid JSON array.'
+                        },
+                        {
+                            role: 'user',
+                            content: prompt
+                        }
+                    ],
+                    model: 'llama-3.3-70b-versatile',
+                    temperature: 0.8,
+                    max_tokens: 2000
+                });
+                responseText = completion.choices[0]?.message?.content || '[]';
+            } else {
+                throw new Error('No AI provider configured');
+            }
+
+
             responseText = responseText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
             const problems = JSON.parse(responseText);
 
@@ -518,8 +558,8 @@ Make them thought-provoking and suitable for discussion.`;
     async initialize() {
         console.log('🤖 Initializing AI Content Generator...');
 
-        if (!process.env.GROQ_API_KEY) {
-            console.warn('⚠️  GROQ_API_KEY not found. Loading from database or using fallback content.');
+        if (!process.env.GROQ_API_KEY && !process.env.GEMINI_API_KEY) {
+            console.warn('⚠️  Neither GROQ_API_KEY nor GEMINI_API_KEY found. Loading from database or using fallback content.');
 
             // Try to load from database
             const dbNews = await this.loadNewsFromDatabase();

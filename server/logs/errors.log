@@ -783,3 +783,198 @@ Error: Critical memory usage: 92%
     at process.processTimers (node:internal/timers:541:7)
 Context: {"type":"high-memory","heapUsedMB":35,"heapTotalMB":38}
 
+[2025-11-29T12:14:34.809Z] [INFO] MongoDB connection lost
+Error: MongoDB connection lost
+    at NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:93:17)
+    at NativeConnection.emit (node:events:508:28)
+    at NativeConnection.set (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:149:12)
+    at C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1078:23
+    at async NativeConnection.openUri (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1098:5)
+Context: {"type":"database-disconnect"}
+
+[2025-11-29T12:14:34.811Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"mongodb-connection"}
+
+[2025-11-29T12:14:34.813Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"database-error"}
+
+[2025-11-29T12:14:39.845Z] [INFO] MongoDB connection lost
+Error: MongoDB connection lost
+    at NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:93:17)
+    at NativeConnection.emit (node:events:508:28)
+    at NativeConnection.set (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:149:12)
+    at C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1078:23
+    at async NativeConnection.openUri (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:30:17)
+    at async NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:13)
+Context: {"type":"database-disconnect"}
+
+[2025-11-29T12:14:39.849Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"self-healing","attempt":2}
+
+[2025-11-29T12:14:39.854Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"database-error"}
+
+[2025-11-29T12:14:49.915Z] [INFO] MongoDB connection lost
+Error: MongoDB connection lost
+    at NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:93:17)
+    at NativeConnection.emit (node:events:508:28)
+    at NativeConnection.set (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:149:12)
+    at C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1078:23
+    at async NativeConnection.openUri (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:30:17)
+    at async NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:13)
+Context: {"type":"database-disconnect"}
+
+[2025-11-29T12:14:49.916Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"self-healing","attempt":4}
+
+[2025-11-29T12:14:49.918Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"database-error"}
+
+[2025-11-29T12:14:59.878Z] [INFO] MongoDB connection lost
+Error: MongoDB connection lost
+    at NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:93:17)
+    at NativeConnection.emit (node:events:508:28)
+    at NativeConnection.set (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:149:12)
+    at C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1078:23
+    at async NativeConnection.openUri (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:30:17)
+    at async SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:44:20)
+    at async NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:13)
+Context: {"type":"database-disconnect"}
+
+[2025-11-29T12:14:59.880Z] [INFO] Database reconnection failed after max attempts
+Error: Database reconnection failed after max attempts
+    at SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:15:17)
+    at NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:24)
+Context: {"type":"self-healing","attempts":5}
+
+[2025-11-29T12:14:59.881Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"self-healing","attempt":5}
+
+[2025-11-29T12:14:59.882Z] [INFO] Database reconnection failed after max attempts
+Error: Database reconnection failed after max attempts
+    at SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:15:17)
+    at SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:44:31)
+    at async SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:44:20)
+    at async NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:13)
+Context: {"type":"self-healing","attempts":5}
+
+[2025-11-29T12:14:59.883Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"database-error"}
+
+[2025-11-29T12:15:29.950Z] [INFO] MongoDB connection lost
+Error: MongoDB connection lost
+    at NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:93:17)
+    at NativeConnection.emit (node:events:508:28)
+    at NativeConnection.set (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:149:12)
+    at C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1078:23
+    at async NativeConnection.openUri (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:30:17)
+    at async NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:13)
+Context: {"type":"database-disconnect"}
+
+[2025-11-29T12:15:29.952Z] [INFO] Database reconnection failed after max attempts
+Error: Database reconnection failed after max attempts
+    at SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:15:17)
+    at NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:24)
+Context: {"type":"self-healing","attempts":5}
+
+[2025-11-29T12:15:29.953Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"self-healing","attempt":5}
+
+[2025-11-29T12:15:29.954Z] [INFO] Database reconnection failed after max attempts
+Error: Database reconnection failed after max attempts
+    at SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:15:17)
+    at SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:44:31)
+    at async NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:13)
+Context: {"type":"self-healing","attempts":5}
+
+[2025-11-29T12:15:29.956Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"database-error"}
+
+[2025-11-29T12:15:34.723Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":28,"heapTotalMB":30}
+
+[2025-11-29T12:16:09.944Z] [INFO] MongoDB connection lost
+Error: MongoDB connection lost
+    at NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:93:17)
+    at NativeConnection.emit (node:events:508:28)
+    at NativeConnection.set (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:149:12)
+    at C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1078:23
+    at async NativeConnection.openUri (C:\Users\Asus\new site done tech\server\node_modules\mongoose\lib\connection.js:1098:5)
+    at async SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:30:17)
+    at async SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:44:20)
+    at async NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:13)
+Context: {"type":"database-disconnect"}
+
+[2025-11-29T12:16:09.947Z] [INFO] Database reconnection failed after max attempts
+Error: Database reconnection failed after max attempts
+    at SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:15:17)
+    at NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:24)
+Context: {"type":"self-healing","attempts":5}
+
+[2025-11-29T12:16:09.950Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"self-healing","attempt":5}
+
+[2025-11-29T12:16:09.952Z] [INFO] Database reconnection failed after max attempts
+Error: Database reconnection failed after max attempts
+    at SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:15:17)
+    at SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:44:31)
+    at async SelfHealing.reconnectDatabase (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:44:20)
+    at async NativeConnection.<anonymous> (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:98:13)
+Context: {"type":"self-healing","attempts":5}
+
+[2025-11-29T12:16:09.954Z] [INFO] querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+Context: {"type":"database-error"}
+
+[2025-11-29T12:22:36.669Z] [INFO] Critical memory usage: 94%
+Error: Critical memory usage: 94%
+    at Timeout._onTimeout (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":31,"heapTotalMB":33}
+
+[2025-11-29T12:27:37.691Z] [INFO] Critical memory usage: 95%
+Error: Critical memory usage: 95%
+    at Timeout._onTimeout (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":35,"heapTotalMB":37}
+
+[2025-11-29T12:32:37.824Z] [INFO] Critical memory usage: 96%
+Error: Critical memory usage: 96%
+    at Timeout._onTimeout (C:\Users\Asus\new site done tech\server\monitoring\selfHealing.js:131:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+Context: {"type":"high-memory","heapUsedMB":36,"heapTotalMB":38}
+

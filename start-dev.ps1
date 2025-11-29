@@ -7,14 +7,14 @@ Write-Host "Make sure MongoDB is running (local or Atlas)" -ForegroundColor Gray
 
 # Start Backend Server
 Write-Host "`n🔧 Starting Backend Server..." -ForegroundColor Yellow
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\server'; Write-Host '🔧 Backend Server' -ForegroundColor Green; npm run dev"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Set-Location -LiteralPath '$PSScriptRoot\server'; Write-Host '🔧 Backend Server' -ForegroundColor Green; npm run dev"
 
 # Wait a bit for backend to start
 Start-Sleep -Seconds 3
 
 # Start Frontend Client
 Write-Host "🎨 Starting Frontend Client..." -ForegroundColor Yellow
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\client'; Write-Host '🎨 Frontend Client' -ForegroundColor Cyan; npm run dev"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Set-Location -LiteralPath '$PSScriptRoot\client'; Write-Host '🎨 Frontend Client' -ForegroundColor Cyan; npm run dev"
 
 Write-Host "`n✅ Development environment is starting!" -ForegroundColor Green
 Write-Host "   - Backend: http://localhost:5000" -ForegroundColor Gray
